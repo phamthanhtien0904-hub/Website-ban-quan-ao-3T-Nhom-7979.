@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tài khoản — 3T</title><link rel="stylesheet" href="style.css"><style>
+.account-toast{position:fixed;top:24px;right:24px;z-index:9999;background:#202722;color:#fff;padding:16px 22px;border-left:4px solid #a2a887;box-shadow:0 10px 30px #0002;opacity:0;transform:translateY(-12px);transition:.28s;pointer-events:none;font-size:14px}.account-toast.show{opacity:1;transform:translateY(0)}
+.account-panel-locked{opacity:.55;filter:grayscale(.2);transition:opacity .3s}.logout-flash{animation:logoutFade .55s ease}@keyframes logoutFade{0%{opacity:1}50%{opacity:.35}100%{opacity:1}}
+.profile-editing{background:#fffdf5!important;border-color:#a2a887!important;box-shadow:0 0 0 2px #a2a88722!important;}
+.action-success{background:#e7eee8!important;border-color:#aab9aa!important;color:#26352b!important;transition:all .25s ease;}
+</style></head><body>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html">3T<span>.</span></a><nav><a href="index.html">Trang chủ</a><a href="index.html#products">Sản phẩm</a><a class="active" href="account.html">Tài khoản</a></nav><div class="nav-actions"><a class="icon-link" href="cart.html">Giỏ hàng <b class="badge">03</b></a><a class="admin-link" href="admin-login.html">Quản trị ↗</a></div></div></header>
+<main class="container page-wrap"><div class="breadcrumbs">Trang chủ　/　Tài khoản</div><div class="section-head"><div><p class="eyebrow">MY ACCOUNT</p><h1 class="page-title">Tài khoản khách hàng</h1></div><span class="status-pill">GIAO DIỆN MINH HỌA</span></div>
+<div class="account-layout" style="margin-top:20px"><aside class="account-menu"><div class="account-profile"><div class="avatar avatar-big">P</div><b class="account-name">Phan Anh Tuấn</b><small id="account-member-label">Khách hàng · Thành viên</small></div><a class="selected" href="#profile">Thông tin tài khoản</a><a href="#register">Đăng ký người mua</a><a href="#orders">Lịch sử đơn hàng</a><a href="#address">Sổ địa chỉ</a><a href="#login">Đăng nhập / Đăng xuất</a></aside><div class="account-content">
+<section id="login" class="panel"><div class="panel-title"><h2>Đăng nhập tài khoản</h2><span class="muted">CUSTOMER LOGIN</span></div><div class="form-grid"><label>Email hoặc số điện thoại<input id="customer-login-id" placeholder="Nhập email / số điện thoại"></label><label>Mật khẩu<input id="customer-login-password" type="password" placeholder="Nhập mật khẩu"></label></div><button id="customer-login-btn" class="btn btn-dark" type="button">ĐĂNG NHẬP</button>　<button id="customer-logout-btn" class="btn btn-outline" type="button">ĐĂNG XUẤT</button></section>
+<section id="register" class="panel"><div class="panel-title"><h2>Đăng ký làm người mua hàng</h2><span class="muted">CREATE ACCOUNT</span></div><div class="form-grid"><label>Họ và tên<input id="register-name" placeholder="Nhập họ và tên"></label><label>Email<input id="register-email" placeholder="Nhập email"></label><label>Số điện thoại<input id="register-phone" placeholder="Nhập số điện thoại"></label><label>Ngày sinh<input id="register-birthday" type="date"></label><label>Mật khẩu<input id="register-password" type="password" placeholder="Tạo mật khẩu"></label><label>Xác nhận mật khẩu<input id="register-confirm-password" type="password" placeholder="Nhập lại mật khẩu"></label></div><button id="customer-register-btn" class="btn btn-dark" type="button">TẠO TÀI KHOẢN</button></section>
+<section id="profile" class="panel"><div class="panel-title"><h2>Thông tin người đang đăng nhập</h2><span id="customer-status" class="status-pill">CHƯA ĐĂNG NHẬP</span></div><div class="form-grid"><label>Họ và tên<input id="profile-name" value="" readonly></label><label>Email<input id="profile-email" value="" readonly></label><label>Số điện thoại<input id="profile-phone" value="" readonly></label><label>Ngày sinh<input id="profile-birthday" value="" readonly></label></div><button id="profile-edit-btn" class="btn btn-outline" type="button">CHỈNH SỬA THÔNG TIN</button></section>
+<section id="address" class="panel"><div class="panel-title"><h2>Sổ địa chỉ nhận hàng</h2><span class="muted">ĐỊA CHỈ MẪU</span></div><label class="radio-line"><input type="radio" checked> <span><b>Địa chỉ mặc định</b><br>25 Nguyễn Trãi, Phường 2, Quận 5, TP. Hồ Chí Minh</span></label><label class="radio-line"><input type="radio"> Nhập địa chỉ mới</label><div class="form-grid"><label>Địa chỉ cụ thể<input placeholder="Số nhà, tên đường"></label><label>Quận / Huyện<input placeholder="Quận / Huyện"></label><label>Tỉnh / Thành phố<input placeholder="Tỉnh / Thành phố"></label><label>Số điện thoại nhận hàng<input placeholder="Số điện thoại"></label></div><button id="add-address-btn" class="btn btn-outline" type="button">＋ THÊM ĐỊA CHỈ</button></section>
+<section id="orders" class="panel"><div class="panel-title"><h2>Lịch sử mua hàng</h2><span class="muted">ĐƠN HÀNG MẪU</span></div><article class="order-card"><div class="order-top"><b>Đơn hàng #AT261015</b><span class="order-status delivered">Đã giao thành công</span></div><p class="muted">15/10/2026 · 2 sản phẩm · Địa chỉ: Quận 5, TP.HCM</p><div class="order-bottom"><span>Áo sơ mi xanh bạc hà × 1 · Quần ống rộng × 1</span><b>1.018.000đ</b></div><a class="text-link" href="#orders">Xem chi tiết đơn hàng ↗</a></article><article class="order-card"><div class="order-top"><b>Đơn hàng #AT260902</b><span class="order-status pending">Chưa xác nhận</span></div><p class="muted">02/09/2026 · 1 sản phẩm · Địa chỉ: Quận 5, TP.HCM</p><div class="order-bottom"><span>Áo sơ mi xanh bạc hà × 1</span><b>429.000đ</b></div><a class="text-link" href="#orders">Xem chi tiết đơn hàng ↗</a></article></section>
+</div></div></main><footer class="footer"><div class="container footer-bottom">© 2026 3T · Website tĩnh minh họa.</div></footer><div id="account-toast" class="account-toast" role="status" aria-live="polite"></div>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const $=id=>document.getElementById(id), toast=$('account-toast'); let toastTimer;
+ const showToast=msg=>{toast.textContent=msg;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2800)};
+ const setProfile=({email='',phone='',birthday=''}={})=>{$('profile-name').value='Phan Anh Tuấn';$('profile-email').value=email;$('profile-phone').value=phone;$('profile-birthday').value=birthday;$('customer-status').textContent='ĐÃ ĐĂNG NHẬP';document.querySelectorAll('.account-name').forEach(x=>x.textContent='Phan Anh Tuấn');$('account-member-label').textContent='Khách hàng · Thành viên'};
+ const clearAccount=()=>{['profile-name','profile-email','profile-phone','profile-birthday','customer-login-id','customer-login-password','register-name','register-email','register-phone','register-birthday','register-password','register-confirm-password'].forEach(id=>{const el=$(id);if(el)el.value=''});$('customer-status').textContent='ĐÃ ĐĂNG XUẤT';document.querySelectorAll('.account-name').forEach(x=>x.textContent='Khách chưa đăng nhập');$('account-member-label').textContent='Vui lòng đăng nhập để xem tài khoản'};
+ $('customer-login-btn').addEventListener('click',()=>{const v=$('customer-login-id').value.trim();setProfile({email:v.includes('@')?v:'',phone:v.includes('@')?'':v});showToast('✓ Đăng nhập thành công! Xin chào Phan Anh Tuấn.');$('profile').scrollIntoView({behavior:'smooth',block:'start'});});
+ $('customer-register-btn').addEventListener('click',()=>{setProfile({email:$('register-email').value.trim(),phone:$('register-phone').value.trim(),birthday:$('register-birthday').value});showToast('✓ Đăng ký thành công! Bạn đã đăng nhập vào tài khoản Phan Anh Tuấn.');$('profile').scrollIntoView({behavior:'smooth',block:'start'});});
+ $('customer-logout-btn').addEventListener('click',()=>{document.querySelector('.account-content').classList.add('logout-flash');clearAccount();showToast('✓ Đã đăng xuất. Thông tin đăng nhập và thông tin cá nhân đã được xóa.');setTimeout(()=>document.querySelector('.account-content').classList.remove('logout-flash'),600);$('login').scrollIntoView({behavior:'smooth',block:'start'});});
+ let profileEditing=false, originalProfile={};
+ const profileFields=['profile-name','profile-email','profile-phone','profile-birthday'];
+ $('profile-edit-btn').addEventListener('click',()=>{
+   const fields=profileFields.map(id=>$(id));
+   if(!profileEditing){
+     originalProfile=Object.fromEntries(fields.map(el=>[el.id,el.value]));
+     fields.forEach(el=>{el.readOnly=false;el.classList.add('profile-editing');});
+     profileEditing=true;
+     $('profile-edit-btn').textContent='LƯU THAY ĐỔI';
+     $('profile-edit-btn').classList.add('action-success');
+     showToast('Bạn có thể chỉnh sửa thông tin. Nhấn LƯU THAY ĐỔI để hoàn tất.');
+     fields[0].focus();
+     return;
+   }
+   // Mô phỏng lưu thành công nhưng khôi phục toàn bộ dữ liệu gốc theo yêu cầu.
+   fields.forEach(el=>{el.value=originalProfile[el.id] ?? '';el.readOnly=true;el.classList.remove('profile-editing');});
+   profileEditing=false;
+   $('profile-edit-btn').textContent='CHỈNH SỬA THÔNG TIN';
+   $('profile-edit-btn').classList.remove('action-success');
+   showToast('✓ Chỉnh sửa thông tin thành công!');
+   $('profile').classList.add('logout-flash');
+   setTimeout(()=>$('profile').classList.remove('logout-flash'),600);
+ });
+ $('add-address-btn').addEventListener('click',()=>{showToast('✓ Thêm địa chỉ thành công!');$('add-address-btn').classList.add('action-success');setTimeout(()=>$('add-address-btn').classList.remove('action-success'),1200);});
+});
+</script></body></html>
